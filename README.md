@@ -131,8 +131,24 @@ HealthMLOpsX/
 
 ---
 
-👉 **Want this as a downloadable `README.md` file or zipped with your repo?**  
-Say: `Share file` or `Zip and share`.  
+1️⃣ Prometheus Targets Page (2.jpg)
+🌟 What it shows:
 
-Let me know — I’m ready! 🚀
+Both prometheus and node-exporter targets are UP (healthy and scraping metrics).
+
+Includes endpoint details, scrape duration, and no scrape errors.
+
+The browser bar shows 127.0.0.1 indicating local Minikube deployment — this highlights your hands-on setup, not just screenshots from cloud GUIs.
+
+
+2️⃣ Grafana Explore Page Query (1.jpg)
+🌟 What it shows:
+
+Successful query of node_memory_MemAvailable_bytes from Prometheus in Grafana.
+
+Live graph of node memory available over time.
+
+Again, local infra URL is visible (e.g., 127.0.0.1:3000 or similar).
+
+
 ```
