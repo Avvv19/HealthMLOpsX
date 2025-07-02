@@ -1,6 +1,4 @@
-💯 Absolutely, Vivek! Below is a **single, clean, GitHub-safe `README.md`** — no Mermaid or Markdown syntax errors, no broken formatting, and logically separated sections. You can paste this directly into GitHub or VSCode.
 
----
 
 ````markdown
 # 🚀 HealthMLOpsX
