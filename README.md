@@ -1,66 +1,63 @@
 # 🚀 HealthMLOpsX
 
-**HealthMLOpsX** is a hybrid-cloud, production-grade AI + MLOps platform:
-- SageMaker CV models (TensorFlow / PyTorch)
-- Vertex AI / BigQuery ML structured models
-- LangChain RAG chatbot (Hugging Face + Pinecone)
-- Databricks Spark ML pipeline
-- FastAPI secured with OAuth2, JWT, audit logging
-- MLOps (MLflow, Prometheus, Grafana, Sentry)
-- Terraform + Helm infra-as-code
-- CI/CD: GitHub Actions with canary deploy & rollback
-- Streamlit / Power BI / Looker ready frontend
+**HealthMLOpsX** is a hybrid-cloud AI + MLOps platform for healthcare, delivering:
+- ✅ **Multi-cloud AI (AWS SageMaker, GCP Vertex AI, Azure ML)**
+- ✅ **LangChain RAG chatbot (Hugging Face + Pinecone)**
+- ✅ **TensorFlow + PyTorch CV models**
+- ✅ **Databricks Spark ML pipeline**
+- ✅ **MLOps (MLflow, Prometheus, Grafana, Sentry)**
+- ✅ **FastAPI API secured with OAuth2, JWT, audit logging**
+- ✅ **Infra-as-code (Terraform + Helm)**
+- ✅ **CI/CD via GitHub Actions with canary deploy + rollback**
+- ✅ **Streamlit / Power BI / Looker integration-ready**
 
 ---
-## Architecture
+
+## 📌 Architecture
 
 ```mermaid
 flowchart TD
-  A[GitHub Actions CI/CD] --> B[Terraform + Helm]
-  B --> C[AWS / GCP / Azure Infra]
-  C --> D[SageMaker CV Model]
-  C --> E[Vertex AI / BigQuery ML]
-  C --> F[Databricks Spark ML]
-  D & E & F --> G[FastAPI API]
-  G --> H[LangChain RAG + Pinecone]
-  G --> I[MLflow Tracking]
-  G --> J[Prometheus / Grafana / Sentry]
-  G --> K[Streamlit / Power BI Frontend]
-
-
-Quick Start
-Build + Push API
-
+  CI[GitHub Actions CI/CD] --> TF[Tf / Helm]
+  TF --> CLOUD[AWS / GCP / Azure]
+  CLOUD --> SM[SageMaker CV Model]
+  CLOUD --> VA[Vertex AI / BigQuery ML]
+  CLOUD --> DB[Databricks Spark]
+  SM & VA & DB --> API[FastAPI + OAuth2 + JWT]
+  API --> RAG[LangChain RAG + Pinecone]
+  API --> ML[MLflow Tracking]
+  API --> MON[Prometheus / Grafana / Sentry]
+  API --> FE[Streamlit / Power BI Frontend]
+⚡ Quick Start
+1️⃣ Build + Push API Docker image
+bash
+Copy
+Edit
 docker build -t avvv19/healthmlopsx-api:latest -f docker/Dockerfile.api .
-
 docker push avvv19/healthmlopsx-api:latest
-
-Deploy Infra + App
+2️⃣ Deploy Infra + App
+bash
+Copy
+Edit
 terraform apply
 helm upgrade --install healthmlopsx ./infra/helm
-
-Local Access URLs
+3️⃣ Local URLs (minikube tunnel may be needed)
 Service	URL
-
-FastAPI	http://127.0.0.1:8000/docs
+FastAPI Docs	http://127.0.0.1:8000/docs
 Prometheus	http://127.0.0.1:30090
 Grafana	http://127.0.0.1:30300
 
-
-📦 Project Structure
-
+🗂 Project Structure
+pgsql
+Copy
+Edit
 HealthMLOpsX/
 ├── app/
 │   ├── api.py
 │   ├── security.py
 │   ├── rag_pipeline.py
-│   ├── cv_model.py
-│   ├── structured_model.py
-│   └── mlflow_tracker.py
+│   ├── mlflow_tracker.py
 ├── docker/
 │   └── Dockerfile.api
-├── frontend/
-│   └── streamlit_app.py
 ├── infra/
 │   ├── helm/
 │   │   ├── Chart.yaml
@@ -74,10 +71,11 @@ HealthMLOpsX/
 │   └── terraform/
 │       ├── main.tf
 │       ├── variables.tf
-│       └── outputs.tf
+│       ├── outputs.tf
 ├── .github/
 │   └── workflows/
 │       └── ci-cd.yml
+├── frontend/
+│   └── streamlit_app.py
 ├── tests/
-│   └── test_api.py
-└── README.md
+├── README.md
