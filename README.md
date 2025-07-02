@@ -1,57 +1,54 @@
 # 🚀 HealthMLOpsX
 
-**HealthMLOpsX** is a hybrid-cloud, production-ready AI + MLOps platform that integrates:
-- SageMaker CV models (TensorFlow / optional PyTorch)
-- Vertex AI structured models / BigQuery ML
+**HealthMLOpsX** is a hybrid-cloud, production-grade AI + MLOps platform:
+- SageMaker CV models (TensorFlow / PyTorch)
+- Vertex AI / BigQuery ML structured models
 - LangChain RAG chatbot (Hugging Face + Pinecone)
-- Databricks Spark ML pipelines
-- FastAPI secured with OAuth2 / JWT / audit logging
-- Full MLOps stack (MLflow, Prometheus, Grafana, Sentry)
-- Infrastructure-as-Code (Terraform + Helm)
-- CI/CD (GitHub Actions with canary deployment + rollback)
-- Streamlit / BI hooks (Power BI / Looker ready)
+- Databricks Spark ML pipeline
+- FastAPI secured with OAuth2, JWT, audit logging
+- MLOps (MLflow, Prometheus, Grafana, Sentry)
+- Terraform + Helm infra-as-code
+- CI/CD: GitHub Actions with canary deploy & rollback
+- Streamlit / Power BI / Looker ready frontend
 
 ---
-
-## 🏗 Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
   A[GitHub Actions CI/CD] --> B[Terraform + Helm]
-  B --> C[AWS / GCP / Azure infra]
+  B --> C[AWS / GCP / Azure Infra]
   C --> D[SageMaker CV Model]
   C --> E[Vertex AI / BigQuery ML]
-  C --> F[Databricks Spark ETL / MLlib]
+  C --> F[Databricks Spark ML]
   D & E & F --> G[FastAPI API]
   G --> H[LangChain RAG + Pinecone]
-  G --> I[MLflow tracking]
-  G --> J[Prometheus + Grafana + Sentry monitoring]
-  G --> K[Streamlit / Power BI frontend]
-⚡ Quick Start
-🐳 Build + Push API
-bash
-Copy
-Edit
+  G --> I[MLflow Tracking]
+  G --> J[Prometheus / Grafana / Sentry]
+  G --> K[Streamlit / Power BI Frontend]
+
+
+Quick Start
+Build + Push API
+
 docker build -t avvv19/healthmlopsx-api:latest -f docker/Dockerfile.api .
+
 docker push avvv19/healthmlopsx-api:latest
-🏗 Infra + App Deploy
-bash
-Copy
-Edit
+
+Deploy Infra + App
 terraform apply
 helm upgrade --install healthmlopsx ./infra/helm
-🎯 Local Access URLs
+
+Local Access URLs
 Service	URL
+
 FastAPI	http://127.0.0.1:8000/docs
 Prometheus	http://127.0.0.1:30090
 Grafana	http://127.0.0.1:30300
 
-Use minikube service prometheus or grafana if NodePort is configured.
 
 📦 Project Structure
-pgsql
-Copy
-Edit
+
 HealthMLOpsX/
 ├── app/
 │   ├── api.py
