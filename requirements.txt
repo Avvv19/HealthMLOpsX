@@ -10,3 +10,5 @@ prometheus-client>=0.16.0
 pytest>=7.4.0
 pytest-asyncio>=1.0.0
 httpx>=0.24.0
+python-jose>=3.3.0
+mlflow>=2.4.0

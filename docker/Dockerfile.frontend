@@ -1,18 +1,6 @@
-# docker/Dockerfile.frontend
-
-FROM python:3.9
-
+FROM python:3.9-slim
 WORKDIR /app
-
-# Install all your existing deps
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Then install Streamlit itself
-RUN pip install --no-cache-dir streamlit
-
-# Copy your UI code
+RUN pip install --no-cache-dir -r requirements.txt streamlit
 COPY frontend/ ./frontend/
-
-# Launch the Streamlit app
 CMD ["streamlit", "run", "frontend/streamlit_app.py"]

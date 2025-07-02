@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.bak
+.cache/
+pytest_cache/
+*.egg-info/
+*.dist-info/
+.env
+.dockerignore
+Dockerfile
+docker-compose.yml
+README.md
+*.md

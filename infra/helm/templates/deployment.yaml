@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthmlopsx-deployment
+  labels:
+    app: healthmlopsx
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: healthmlopsx
+  template:
+    metadata:
+      labels:
+        app: healthmlopsx
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          {{- if .Values.resources }}
+          resources:
+{{ toYaml .Values.resources | nindent 12 }}
+          {{- end }}

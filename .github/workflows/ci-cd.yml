@@ -1,0 +1,17 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t avvv19/healthmlopsx-api:latest -f docker/Dockerfile.api .
+      - name: Push to Docker Hub
+        run: docker push avvv19/healthmlopsx-api:latest
+      - name: Helm upgrade
+        run: helm upgrade --install healthmlopsx ./infra/helm
