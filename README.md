@@ -15,7 +15,6 @@
 
 ## 📌 Architecture
 
-```mermaid
 flowchart TD
   CI[GitHub Actions CI/CD] --> TF[Tf / Helm]
   TF --> CLOUD[AWS / GCP / Azure]
@@ -27,21 +26,17 @@ flowchart TD
   API --> ML[MLflow Tracking]
   API --> MON[Prometheus / Grafana / Sentry]
   API --> FE[Streamlit / Power BI Frontend]
+
 ⚡ Quick Start
 1️⃣ Build + Push API Docker image
-bash
-Copy
-Edit
 docker build -t avvv19/healthmlopsx-api:latest -f docker/Dockerfile.api .
 docker push avvv19/healthmlopsx-api:latest
+
 2️⃣ Deploy Infra + App
-bash
-Copy
-Edit
 terraform apply
 helm upgrade --install healthmlopsx ./infra/helm
+
 3️⃣ Local URLs (minikube tunnel may be needed)
-Service	URL
 FastAPI Docs	http://127.0.0.1:8000/docs
 Prometheus	http://127.0.0.1:30090
 Grafana	http://127.0.0.1:30300
