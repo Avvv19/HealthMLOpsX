@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://komarev.com/ghpvc/?username=Avvv19&label=Views&color=0e75b6&style=flat" alt="views"/>
-
 # HealthMLOpsX
 
-### Hybrid-Cloud AI + MLOps Platform for Healthcare
+### Hybrid-Cloud MLOps Platform for Healthcare
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://tensorflow.org)
@@ -19,7 +17,7 @@
 
 ## Overview
 
-**HealthMLOpsX** is a production-grade, hybrid-cloud AI + MLOps platform purpose-built for healthcare. It combines multi-cloud model serving, LangChain RAG pipelines, full MLOps observability, and enterprise-grade security into a single deployable platform that helps healthcare organizations build, monitor, and scale AI at clinical speed.
+Production-grade, hybrid-cloud MLOps platform for healthcare. Combines multi-cloud model serving, LangChain RAG pipelines, full MLOps observability, and enterprise-grade security into a single deployable platform.
 
 ---
 
@@ -130,28 +128,3 @@ HealthMLOpsX/
 |-- tests/
 |-- README.md
 ```
-
----
-
-## Features Checklist
-
-- [x] SageMaker + Vertex AI models
-- [x] Databricks Spark ML pipeline
-- [x] LangChain RAG + Pinecone vector store
-- [x] OAuth2 + JWT + audit logging
-- [x] MLflow tracking
-- [x] Prometheus + Grafana monitoring
-- [x] Sentry error monitoring
-- [x] GitHub Actions CI/CD with canary deploy
-- [x] Terraform infrastructure as code
-- [x] Helm chart deployment
-- [ ] Power BI / Looker live connectors (extend as needed)
-
----
-
-## Author
-
-**Venkata Vivek Varma Alluru** | AI in Healthcare | 3+ Years Experience
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/venkatavivekvarmaalluru/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Avvv19)
