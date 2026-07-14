@@ -27,7 +27,7 @@ HealthMLOpsX is a personal learning and reference prototype for exploring API se
 | AWS SageMaker deployment | No implementation found | Not implemented; future work only |
 | GCP Vertex AI integration | No implementation found | Not implemented; future work only |
 | Azure ML integration | No implementation found | Not implemented; future work only |
-| Automated drift detection/retraining | No reproducible implementation found | Not implemented; future work only |
+| Drift monitoring and retraining | No reproducible implementation found | Not implemented; future work only |
 | A/B model deployment | No implementation found | Not implemented; future work only |
 | Formal healthcare compliance | No external assessment or operating controls evidence | Not claimed |
 
