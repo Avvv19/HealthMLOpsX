@@ -38,6 +38,9 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
+copy .env.example .env  # Windows
+# cp .env.example .env  # macOS/Linux
+# Set JWT_SECRET_KEY to a long random development value.
 uvicorn app.api:app --reload
 ```
 
@@ -52,6 +55,7 @@ Some dependencies are large and environment-sensitive. A test result should be t
 ## Limitations
 
 - No production deployment or external users are evidenced.
+- Authentication fails closed when `JWT_SECRET_KEY` is not configured; no default signing secret is included.
 - No clinical validation, PHI processing authorization, or compliance certification is provided.
 - Infrastructure files are examples and do not establish an operated environment.
 - MLflow values and cloud integration points require real configuration and saved evidence.
